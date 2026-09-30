@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lexicalUnit xmlns="http://framenet.icsi.berkeley.edu"
+             ID="200" name="declare.v" POS="V"
+             frameID="100" frame="Statement" status="Finished_Initial">
+  <definition>To communicate a statement publicly.</definition>
+  <lexeme name="declare" POS="V" headword="true"/>
+  <subCorpus name="V-730-s20-ppby">
+    <sentence ID="300">
+      <text>The institute declared a programme.</text>
+      <annotationSet ID="400" status="MANUAL">
+        <layer name="FE">
+          <label start="0" end="12" name="Speaker"/>
+          <label start="23" end="33" name="Message"/>
+        </layer>
+        <layer name="GF">
+          <label start="0" end="12" name="Ext"/>
+          <label start="23" end="33" name="Obj"/>
+        </layer>
+        <layer name="PT">
+          <label start="0" end="12" name="NP"/>
+          <label start="23" end="33" name="NP"/>
+        </layer>
+      </annotationSet>
+    </sentence>
+  </subCorpus>
+</lexicalUnit>

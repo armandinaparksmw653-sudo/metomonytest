@@ -1,0 +1,9 @@
+{
+  "name": "Metonymy research prototype",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "user": "ubuntu",
+  "install": "AGDA_RTS='+RTS -M6G -RTS' make all"
+}

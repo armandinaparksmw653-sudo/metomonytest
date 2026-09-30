@@ -1,0 +1,607 @@
+{
+  "schema_version": "contextual-context-triggers-1",
+  "triggers": [
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "degree",
+      "requirement": "HasSort University",
+      "strength": "requires",
+      "provenance": "manual-curated:v1 (verified against real WiMCor Valparaiso/Haifa 'degree'/'BA' mentions and live Wikidata P31/P279 checks, see evaluation/pilot-decode-wimcor/README.md)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "doctorate",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v1 (real WiMCor sentence, 'studied at Pisa and obtained his doctorate of law in 1719' -- structure verified via local Stanza/gf.exe; strength kept at prefers, not requires, because the specific institution near Pisa this sentence refers to has not yet been individually checked against live Wikidata P31/P279 the way degree->University was for Valparaiso/Haifa)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "fraternity",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v1 (real WiMCor sentence, 'He enrolled at UCLA and joined the Delta Sigma Phi fraternity' -- structure verified via local Stanza/gf.exe; a US-style fraternity is specifically a university/college social organization, but strength kept at prefers, not requires, since the specific institution has not been individually checked against live Wikidata P31/P279)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "diploma",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v1 (real WiMCor sentence, 'He later attended Berklee and graduated with a diploma in arranging and composition in 1966' -- structure verified via local Stanza/gf.exe; uses the new ComplOblique grammar shape, since 'with a diploma' is a verb-level oblique, not a direct object; strength kept at prefers, not requires, since the specific institution has not been individually checked against live Wikidata P31/P279)"
+    },
+    {
+      "construction": "RelativeClauseObject",
+      "lemma": "certificate",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v1 (real WiMCor sentence, 'He studied at Padgate Training College, Warrington, where he was awarded a Certificate in Education in 1977' -- structure verified via local Stanza/gf.exe; uses the new ModifyRelAtVP grammar shape ('where' built from 'at which'); strength kept at prefers, not requires, since the specific institution has not been individually checked against live Wikidata P31/P279 -- note the source surface here ('Padgate Training College') already includes 'College', a milder version of the Yale/Harvard self-describing-name caveat)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "fellow",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v2 (real WiMCor sentence, 'She is currently emeritus professor of early Medieval history at Winchester, and is a fellow of the Royal Historical Society' -- structure verified via local gf.exe; the specific institution WAS individually checked against live Wikidata: University of Winchester (Q3551690) has P31->Q62078547 'public research university' and P131->Q172157, the exact QID of the surface 'Winchester'. Strength kept at prefers, not requires, DESPITE that check -- unlike 'degree', 'fellow of a scholarly society' does not directly entail the target's own type the way a conferred degree entails its conferring institution; it is a correlated fact about the person, not a direct consequence of the target. See docs/contextual-tower.md's 'professions/writers' section for the full reasoning.)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "member",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v2 (real WiMCor sentence, 'Smith holds a Doctor of Management degree in organizational leadership from Phoenix and is a member of the Delta Mu Delta International Business Honor Society' -- structure verified via local gf.exe; Wikidata search identified the plausible real institution (University of Phoenix, Q1889100), but a live P31/P131 claims-level check could not be completed this round -- a Wikidata API rate limit (HTTP 403) was hit mid-session after the 'fellow'/Winchester check succeeded. Strength kept at prefers for the same 'correlated, not entailed' reason as 'fellow', independent of that unfinished check.)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "editor-in-chief",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "manual-curated:v2 (real WiMCor sentence, 'Geoffrey Martin Hodgson... is a Professor in Management at the London campus of Loughborough, and also the editor-in-chief of the Journal of Institutional Economics' -- structure verified via local gf.exe; Wikidata search identified the plausible real institution (Loughborough University, Q1434547), but a live P31/P131 claims-level check could not be completed this round for the same rate-limit reason as 'member'. Strength kept at prefers for the same 'correlated, not entailed' reason as 'fellow'.)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "scholarship",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "thesis",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "syllabus",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "semester",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "graduate",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "professorship",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "faculty",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ModifyNPObject",
+      "lemma": "campus",
+      "requirement": "HasSort University",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the university family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "laboratory",
+      "requirement": "HasSort ResearchInstitution",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the research-institution family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "grant",
+      "requirement": "HasSort ResearchInstitution",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the research-institution family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "fellowship",
+      "requirement": "HasSort ResearchInstitution",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the research-institution family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "symposium",
+      "requirement": "HasSort ResearchInstitution",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the research-institution family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "theorem",
+      "requirement": "HasSort ScientificDiscipline",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the scientific-discipline family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "hypothesis",
+      "requirement": "HasSort ScientificDiscipline",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the scientific-discipline family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "formula",
+      "requirement": "HasSort ScientificDiscipline",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the scientific-discipline family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "dissertation",
+      "requirement": "HasSort ScientificDiscipline",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the scientific-discipline family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "parliament",
+      "requirement": "HasSort Government",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the government family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "cabinet",
+      "requirement": "HasSort Government",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the government family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "ministry",
+      "requirement": "HasSort Government",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the government family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "ballot",
+      "requirement": "HasSort Government",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the government family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "manifesto",
+      "requirement": "HasSort PoliticalOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the political-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "caucus",
+      "requirement": "HasSort PoliticalOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the political-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "delegate",
+      "requirement": "HasSort PoliticalOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the political-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "campaign",
+      "requirement": "HasSort PoliticalOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the political-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "shareholder",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "merger",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "subsidiary",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "franchise",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "RelativeClauseObject",
+      "lemma": "contract",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "RelativeClauseObject",
+      "lemma": "tender",
+      "requirement": "HasSort BusinessOrganization",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the business-organization family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "manuscript",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "chapter",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "preface",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "bibliography",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "glossary",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "foreword",
+      "requirement": "HasSort LiteraryWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the literary-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "record",
+      "requirement": "HasSort MusicalWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the musical-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "chorus",
+      "requirement": "HasSort MusicalWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the musical-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "verse",
+      "requirement": "HasSort MusicalWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the musical-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "symphony",
+      "requirement": "HasSort MusicalWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the musical-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "concerto",
+      "requirement": "HasSort MusicalWork",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the musical-work family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "screenplay",
+      "requirement": "HasSort Film",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the film family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "cast",
+      "requirement": "HasSort Film",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the film family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "premiere",
+      "requirement": "HasSort Film",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the film family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "sequel",
+      "requirement": "HasSort Film",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the film family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "trademark",
+      "requirement": "HasSort Brand",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the brand family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "logo",
+      "requirement": "HasSort Brand",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the brand family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "flagship",
+      "requirement": "HasSort Brand",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the brand family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "billboard",
+      "requirement": "HasSort Brand",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the brand family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "factory",
+      "requirement": "HasSort Producer",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the producer family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "conveyor",
+      "requirement": "HasSort Producer",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the producer family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "workshop",
+      "requirement": "HasSort Producer",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the producer family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "prototype",
+      "requirement": "HasSort Product",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the product family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "patent",
+      "requirement": "HasSort Product",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the product family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "collection",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "runway",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "tailor",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "silhouette",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ModifyNPObject",
+      "lemma": "boutique",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "RelativeClauseObject",
+      "lemma": "commission",
+      "requirement": "HasSort Clothing",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the clothing family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "recipe",
+      "requirement": "HasSort Food",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the food family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "menu",
+      "requirement": "HasSort Food",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the food family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "harvest",
+      "requirement": "HasSort Food",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the food family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "kitchen",
+      "requirement": "HasSort Food",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the food family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "vintage",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "vineyard",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "distillery",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "brewery",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "cellar",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ModifyNPObject",
+      "lemma": "vineyard",
+      "requirement": "HasSort Drinkable",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the drinkable family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "broadcast",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "bulletin",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "briefing",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "statement",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "headline",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ModifyNPObject",
+      "lemma": "broadcast",
+      "requirement": "HasSort CommunicationContent",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the communication family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "segment",
+      "requirement": "HasSort Programme",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the programme family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    },
+    {
+      "construction": "ConjClauseObject",
+      "lemma": "rundown",
+      "requirement": "HasSort Programme",
+      "strength": "prefers",
+      "provenance": "synthetic-curated:v1 (constructed example for the programme family, not corpus-derived; strength deliberately kept at prefers since no individual example was checked against real-world entities or live Wikidata P31/P279 -- see docs/contextual-tower.md's synthetic multi-domain trigger dictionary section)"
+    }
+  ]
+}

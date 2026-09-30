@@ -1,0 +1,12 @@
+predicate_id	lemma	gf_function	subject_sort	object_sort	strength	gf_expression	provenance
+read	read	Read	Human	Readable	HardRequirement	mkV2 "read"	local:selectional-lexicon
+study	study	Study	Human	Readable	HardRequirement	mkV2 "study"	local:selectional-lexicon
+review	review	Review	Human	Readable	HardRequirement	mkV2 "review"	local:selectional-lexicon
+translate	translate	Translate	Human	Readable	HardRequirement	mkV2 "translate"	local:selectional-lexicon
+drink	drink	Drink	Human	Drinkable	HardRequirement	mkV2 "drink"	local:selectional-lexicon
+eat	eat	Eat	Human	Edible	HardRequirement	mkV2 "eat"	local:selectional-lexicon
+listen-to	listen to	ListenTo	Human	Audible	HardRequirement	mkV2 (mkV "listen") to_Prep	local:selectional-lexicon
+watch	watch	Watch	Human	Watchable	HardRequirement	mkV2 "watch"	local:selectional-lexicon
+wear	wear	Wear	Human	Wearable	HardRequirement	mkV2 "wear"	local:selectional-lexicon
+sign	sign	Sign	Agent	Agreement	HardRequirement	mkV2 "sign"	local:selectional-lexicon
+hear	hear	Hear	Human	Audible	HardRequirement	mkV2 "hear"	local:selectional-lexicon

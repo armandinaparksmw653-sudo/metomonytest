@@ -1,0 +1,40 @@
+{
+  "version": "runtime-rules-1",
+  "relations": [
+    {"property": "P131", "direction": "forward", "internal": "LocatedIn"},
+    {"property": "P131", "direction": "inverse", "internal": "InstitutionOf"},
+    {"property": "P159", "direction": "inverse", "internal": "InstitutionOf"},
+    {"property": "P17", "direction": "forward", "internal": "LocatedIn"},
+    {"property": "P276", "direction": "forward", "internal": "LocatedIn"},
+    {"property": "P749", "direction": "forward", "internal": "AffiliatedWith"},
+    {"property": "P361", "direction": "forward", "internal": "AffiliatedWith"},
+    {"property": "P355", "direction": "forward", "internal": "AffiliatedWith"},
+    {"property": "P463", "direction": "forward", "internal": "MemberOf"},
+    {"property": "P527", "direction": "forward", "internal": "Contains"},
+    {"property": "P101", "direction": "forward", "internal": "Conducts"},
+    {"property": "P921", "direction": "forward", "internal": "About"},
+    {"property": "P176", "direction": "inverse", "internal": "Produces"},
+    {"property": "P50", "direction": "inverse", "internal": "Authored"},
+    {"property": "P137", "direction": "forward", "internal": "PossessedBy"}
+  ],
+  "types": [
+    {"qid": "Q5", "sort": "Human"},
+    {"qid": "Q515", "sort": "Place"},
+    {"qid": "Q3918", "sort": "University"},
+    {"qid": "Q31855", "sort": "ResearchInstitution"},
+    {"qid": "Q7188", "sort": "Government"},
+    {"qid": "Q7210356", "sort": "PoliticalOrganization"},
+    {"qid": "Q43229", "sort": "Organization"},
+    {"qid": "Q355304", "sort": "Organization"},
+    {"qid": "Q4830453", "sort": "BusinessOrganization"},
+    {"qid": "Q108403040", "sort": "Organization"},
+    {"qid": "Q45400320", "sort": "Organization"},
+    {"qid": "Q62078547", "sort": "Organization"},
+    {"qid": "Q708676", "sort": "Organization"},
+    {"qid": "Q11862829", "sort": "ScientificDiscipline"},
+    {"qid": "Q7725634", "sort": "LiteraryWork"},
+    {"qid": "Q11460", "sort": "Clothing"},
+    {"qid": "Q2424752", "sort": "Product"},
+    {"qid": "Q47461344", "sort": "Wearable"}
+  ]
+}

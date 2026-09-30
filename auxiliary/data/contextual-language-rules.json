@@ -1,0 +1,390 @@
+{
+  "schema_version": "contextual-language-rules-5",
+  "action_role_source": {
+    "hard_requirements": "data/predicates.tsv",
+    "selectional_preferences": "data/verbnet-action-roles.tsv",
+    "policy": "prefer-hard-else-disjoin-compiled-preferences"
+  },
+  "bridge_relation_source": "requirement-sort-map-filtered-by-snapshot",
+  "bridge_relations_by_sort": {
+    "Agent": ["InstitutionOf", "GovernedBy", "AffiliatedWith"],
+    "Animate": ["InstitutionOf", "AffiliatedWith"],
+    "Organization": ["InstitutionOf", "AffiliatedWith", "LocatedIn"],
+    "Institution": ["InstitutionOf", "AffiliatedWith", "LocatedIn"],
+    "Readable": ["Authored", "Created"],
+    "Wearable": ["Produces", "Created"],
+    "Clothing": ["Produces", "Created"],
+    "Edible": ["Contains", "Produces"],
+    "Drinkable": ["Contains", "Produces"],
+    "Product": ["Produces", "Created"],
+    "Producer": ["ProducedBy", "Created"],
+    "Programme": ["Conducts", "About"],
+    "ResearchProgramme": ["Conducts", "About"],
+    "Agreement": ["AffiliatedWith", "About"]
+  },
+  "max_bridge_depth": 2,
+  "relation_lexicalizations": {
+    "author": "Authored",
+    "belong": "MemberOf",
+    "contain": "Contains",
+    "conduct": "Conducts",
+    "create": "Created",
+    "govern": "GovernedBy",
+    "host": "Hosts",
+    "include": "Contains",
+    "join": "MemberOf",
+    "locate": "LocatedIn",
+    "offer": "Offers",
+    "own": "PossessedBy",
+    "produce": "Produces",
+    "publish": "Authored",
+    "represent": "Represents",
+    "study": "Conducts",
+    "write": "Authored"
+  },
+  "morphology_overrides": {
+    "announce": {
+      "forms": ["announce", "announced", "announces"],
+      "gf_form": "announces"
+    },
+    "read": {
+      "forms": ["read", "reads"],
+      "gf_form": "reads"
+    },
+    "sign": {
+      "forms": ["sign", "signed", "signs"],
+      "gf_form": "signs"
+    },
+    "wear": {
+      "forms": ["wear", "wears", "wore"],
+      "gf_form": "wears"
+    },
+    "study": {
+      "forms": ["study", "studies", "studied"],
+      "gf_form": "studies"
+    },
+    "eat": {
+      "forms": ["eat", "eats", "ate", "eaten"],
+      "gf_form": "eats"
+    },
+    "hear": {
+      "forms": ["hear", "hears", "heard"],
+      "gf_form": "hears"
+    }
+  },
+  "lexical_sorts": {
+    "book": {"requirement": "HasSort Readable", "provenance": "WordNet:book.n.01"},
+    "clothing": {"requirement": "HasSort Clothing", "provenance": "WordNet:clothing.n.01"},
+    "physics": {"requirement": "HasSort ScientificDiscipline", "provenance": "WordNet:physics.n.01"},
+    "programme": {"requirement": "AnyOf [HasSort Programme,HasSort ResearchProgramme]", "provenance": "WordNet:program.n.08"}
+  },
+  "context_templates": [
+    {
+      "construction": "ModifyNP+InPP",
+      "head_sorts": ["Programme", "ResearchProgramme", "EducationalProgramme"],
+      "relation": "Conducts",
+      "target_slot": "modifier",
+      "provenance": "context-template:programme-in-topic:v1"
+    },
+    {
+      "construction": "ModifyNP+AboutPP",
+      "head_sorts": ["Readable", "CommunicationContent", "Programme", "ResearchProgramme", "EducationalProgramme"],
+      "relation": "About",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "FrameNet:Topic:Topic+construction:head-about-topic:v1"
+    },
+    {
+      "construction": "ModifyNP+WithPP",
+      "head_sorts": ["Agreement", "PoliticalAgreement", "CommercialAgreement"],
+      "relation": "AffiliatedWith",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "FrameNet:Sign_agreement:Co-participant+construction:agreement-with-party:v1"
+    },
+    {
+      "construction": "ModifyNP+ForPP",
+      "head_sorts": ["Programme", "ResearchProgramme", "EducationalProgramme", "CommunicationContent", "Product"],
+      "relation": "About",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "FrameNet:Purpose:Goal+construction:head-for-beneficiary:v1"
+    },
+    {
+      "construction": "ModifyNP+InPP",
+      "head_sorts": ["Institution", "Organization"],
+      "relation": "LocatedIn",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "context-template:institution-in-place:v1"
+    },
+    {
+      "construction": "ModifyNP+InPP",
+      "head_sorts": ["Readable", "Agreement"],
+      "relation": "About",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "context-template:content-in-topic:v1"
+    },
+    {
+      "construction": "ModifyNP+AboutPP",
+      "head_sorts": ["Institution", "Organization", "Agreement"],
+      "relation": "About",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "context-template:organization-about-topic:v1"
+    },
+    {
+      "construction": "ModifyNP+WithPP",
+      "head_sorts": ["Institution", "Organization", "Programme", "ResearchProgramme", "EducationalProgramme"],
+      "relation": "AffiliatedWith",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "context-template:head-with-partner:v1"
+    },
+    {
+      "construction": "ModifyNP+ForPP",
+      "head_sorts": ["Agreement", "Institution", "Organization"],
+      "relation": "About",
+      "target_slot": "modifier",
+      "strength": "SelectionalPreference",
+      "provenance": "context-template:head-for-topic:v1"
+    }
+  ],
+  "frame_argument_capabilities": [
+    {
+      "frames": ["Statement", "Communication"],
+      "argument_sorts": ["Programme", "ResearchProgramme", "EducationalProgramme"],
+      "relation": "Conducts",
+      "related_requirement": "HasSort ScientificDiscipline",
+      "provenance": "capability-projection:Statement×Programme→ConductsDiscipline:v2"
+    },
+    {
+      "frames": ["Statement", "Communication", "Scrutiny"],
+      "argument_sorts": ["Readable"],
+      "relation": "Authored",
+      "related_requirement": "HasSort Readable",
+      "provenance": "capability-projection:Scrutiny×Readable→AuthoredWork:v1"
+    },
+    {
+      "frames": ["Collaboration", "Communication"],
+      "argument_sorts": ["Organization", "Institution"],
+      "relation": "AffiliatedWith",
+      "related_requirement": "HasSort Organization",
+      "provenance": "capability-projection:Collaboration×Organization→AffiliatedWith:v1"
+    },
+    {
+      "frames": ["Statement", "Communication"],
+      "argument_sorts": ["Agreement", "PoliticalAgreement", "CommercialAgreement"],
+      "relation": "AffiliatedWith",
+      "related_requirement": "HasSort Agent",
+      "provenance": "capability-projection:Statement×Agreement→AffiliatedAgent:v1"
+    }
+  ],
+  "composition_matrix": [
+    {
+      "modifier_sort": "Political",
+      "noun_sort": "Agreement",
+      "result_sort": "PoliticalAgreement",
+      "provenance": "ontology-composition:Political×Agreement"
+    },
+    {
+      "modifier_sort": "Commercial",
+      "noun_sort": "Agreement",
+      "result_sort": "CommercialAgreement",
+      "provenance": "ontology-composition:Commercial×Agreement"
+    },
+    {
+      "modifier_sort": "Scientific",
+      "noun_sort": "Agreement",
+      "result_sort": "ScientificAgreement",
+      "provenance": "ontology-composition:Scientific×Agreement"
+    },
+    {
+      "modifier_sort": "Educational",
+      "noun_sort": "Agreement",
+      "result_sort": "EducationalAgreement",
+      "provenance": "ontology-composition:Educational×Agreement"
+    },
+    {
+      "modifier_sort": "Scientific",
+      "noun_sort": "Programme",
+      "result_sort": "ResearchProgramme",
+      "provenance": "ontology-composition:Scientific×Programme"
+    },
+    {
+      "modifier_sort": "Educational",
+      "noun_sort": "Programme",
+      "result_sort": "EducationalProgramme",
+      "provenance": "ontology-composition:Educational×Programme"
+    },
+    {
+      "modifier_sort": "Political",
+      "noun_sort": "Programme",
+      "result_sort": "PoliticalProgramme",
+      "provenance": "ontology-composition:Political×Programme"
+    },
+    {
+      "modifier_sort": "Commercial",
+      "noun_sort": "Programme",
+      "result_sort": "CommercialProgramme",
+      "provenance": "ontology-composition:Commercial×Programme"
+    },
+    {
+      "modifier_sort": "Political",
+      "noun_sort": "Organization",
+      "result_sort": "PoliticalOrganization",
+      "provenance": "ontology-composition:Political×Organization"
+    },
+    {
+      "modifier_sort": "Commercial",
+      "noun_sort": "Organization",
+      "result_sort": "BusinessOrganization",
+      "provenance": "ontology-composition:Commercial×Organization"
+    },
+    {
+      "modifier_sort": "Educational",
+      "noun_sort": "Organization",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Educational×Organization"
+    },
+    {
+      "modifier_sort": "Educational",
+      "noun_sort": "Institution",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Educational×Institution"
+    },
+    {
+      "modifier_sort": "Scientific",
+      "noun_sort": "Organization",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Scientific×Organization"
+    },
+    {
+      "modifier_sort": "Scientific",
+      "noun_sort": "Institution",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Scientific×Institution"
+    },
+    {
+      "modifier_sort": "Political",
+      "noun_sort": "Institution",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Political×Institution"
+    },
+    {
+      "modifier_sort": "Commercial",
+      "noun_sort": "Institution",
+      "result_sort": "Institution",
+      "provenance": "ontology-composition:Commercial×Institution"
+    }
+  ],
+  "action_object_requirements": {
+    "sign": {
+      "Agreement": {
+        "candidate_requirement": "HasSort Agent",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient"
+      },
+      "PoliticalAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Government,HasSort PoliticalOrganization]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:PoliticalAgreement"
+      },
+      "CommercialAgreement": {
+        "candidate_requirement": "HasSort BusinessOrganization",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:CommercialAgreement"
+      },
+      "ScientificAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:ScientificAgreement"
+      },
+      "EducationalAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:EducationalAgreement"
+      },
+      "PoliticalOrganization": {
+        "candidate_requirement": "AnyOf [HasSort Government,HasSort PoliticalOrganization]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:PoliticalOrganization"
+      },
+      "BusinessOrganization": {
+        "candidate_requirement": "HasSort BusinessOrganization",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:BusinessOrganization"
+      },
+      "Institution": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:Institution"
+      },
+      "Programme": {
+        "candidate_requirement": "HasSort Agent",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient"
+      },
+      "ResearchProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:ResearchProgramme"
+      },
+      "EducationalProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:EducationalProgramme"
+      },
+      "PoliticalProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Government,HasSort PoliticalOrganization]",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:PoliticalProgramme"
+      },
+      "CommercialProgramme": {
+        "candidate_requirement": "HasSort BusinessOrganization",
+        "provenance": "FrameNet:Sign_agreement:Signatory:Sentient+local:sort-narrowing:CommercialProgramme"
+      }
+    },
+    "announce": {
+      "Programme": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:Programme"
+      },
+      "ResearchProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:ResearchProgramme"
+      },
+      "EducationalProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:EducationalProgramme"
+      },
+      "PoliticalProgramme": {
+        "candidate_requirement": "AnyOf [HasSort Government,HasSort PoliticalOrganization]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:PoliticalProgramme"
+      },
+      "CommercialProgramme": {
+        "candidate_requirement": "HasSort BusinessOrganization",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:CommercialProgramme"
+      },
+      "Agreement": {
+        "candidate_requirement": "HasSort Agent",
+        "provenance": "FrameNet:Statement:Speaker:Sentient"
+      },
+      "PoliticalAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Government,HasSort PoliticalOrganization]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:PoliticalAgreement"
+      },
+      "CommercialAgreement": {
+        "candidate_requirement": "HasSort BusinessOrganization",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:CommercialAgreement"
+      },
+      "ScientificAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:ScientificAgreement"
+      },
+      "EducationalAgreement": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:EducationalAgreement"
+      },
+      "Institution": {
+        "candidate_requirement": "AnyOf [HasSort Organization,HasSort Institution]",
+        "provenance": "FrameNet:Statement:Speaker:Sentient+local:sort-narrowing:Institution"
+      }
+    },
+    "read": {
+      "Readable": {
+        "candidate_requirement": "HasSort Animate",
+        "provenance": "FrameNet:Reading_perception:Reader:Sentient"
+      }
+    }
+  }
+}

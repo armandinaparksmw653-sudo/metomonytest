@@ -1,0 +1,73 @@
+scenario	source_qid	action	role	max_depth	bridge_relations	constraints
+waterloo	Q639408	announce	SubjectHole	1	InstitutionOf	Verb|announce|announced|9|18|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|physics|physics|38|45|relation|Conducts|Q413|context-template:programme-in-topic:v1
+molde	Q104095	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|6|15|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|51|57|requires|HasSort SportsOrganization|wimcor:real:molde-fk-season;;Noun|loan|loan|30|34|some|PlaysInLeague|HasSort Entity|wimcor:real:molde-fk-on-loan
+houston-university	Q16555	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|14|20|requires|HasSort University|wimcor:real:houston-university-campus
+exeter-university	Q21886091	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:exeter-university-campus
+rochester-university	Q49218	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|16|22|requires|HasSort University|wimcor:real:rochester-university-campus
+durham-university	Q179815	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:durham-university-campus
+bath-university	Q22889	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|11|17|requires|HasSort University|wimcor:real:bath-university-campus
+derby-university	Q21885980	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|12|18|requires|HasSort University|wimcor:real:derby-university-campus
+zagreb-team	Q1435	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|7|16|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|19|25|requires|HasSort SportsOrganization|wimcor:real:zagreb-team-season
+cluj-team	Q100188	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|5|14|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|17|23|requires|HasSort SportsOrganization|wimcor:real:cluj-team-season
+portland-team	Q6106	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|9|18|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|21|27|requires|HasSort SportsOrganization|wimcor:real:portland-team-season
+barcelona-team	Q1492	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|10|19|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|22|28|requires|HasSort SportsOrganization|wimcor:real:barcelona-team-season
+lyon-team	Q456	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|5|14|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|17|23|requires|HasSort SportsOrganization|wimcor:real:lyon-team-season
+casablanca-team	Q7903	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|11|20|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|23|29|requires|HasSort SportsOrganization|wimcor:real:casablanca-team-season
+banff-artifact	Q58337	have	SubjectHole	1	InstitutionOf	Noun|trail|trail|12|17|requires|HasSort Artifact|wimcor:real:banff-national-park-trail
+highclere-artifact	Q5757909	have	SubjectHole	1	InstitutionOf	Noun|garden|garden|16|22|requires|HasSort Artifact|wimcor:real:highclere-castle-garden
+epsom-artifact	Q257577	have	SubjectHole	1	InstitutionOf	Noun|track|track|12|17|requires|HasSort Artifact|wimcor:real:epsom-downs-racecourse-track
+elescorial-artifact	Q371748	have	SubjectHole	1	InstitutionOf	Noun|chapel|chapel|18|24|requires|HasSort Artifact|wimcor:real:el-escorial-chapel
+chichester-artifact	Q207639	have	SubjectHole	1	InstitutionOf	Noun|stage|stage|17|22|requires|HasSort Artifact|wimcor:real:chichester-festival-theatre-stage
+birmingham-university	Q79867	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|17|23|requires|HasSort University|wimcor:real:birmingham-university-campus
+pisa-university	Q13375	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|11|17|requires|HasSort University|wimcor:real:pisa-university-campus
+guadalajara-university	Q9022	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|18|24|requires|HasSort University|wimcor:real:guadalajara-university-campus
+aberystwyth-university	Q213154	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|18|24|requires|HasSort University|wimcor:real:aberystwyth-university-campus
+standrews-university	Q207736	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|17|23|requires|HasSort University|wimcor:real:st-andrews-university-campus
+laspalmas-team	Q11974	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|11|20|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|23|29|requires|HasSort SportsOrganization|wimcor:real:laspalmas-team-season
+helsingborg-team	Q25411	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|12|21|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|24|30|requires|HasSort SportsOrganization|wimcor:real:helsingborg-team-season
+sedan-team	Q184371	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|6|15|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|18|24|requires|HasSort SportsOrganization|wimcor:real:sedan-team-season
+odense-team	Q25331	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|7|16|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|19|25|requires|HasSort SportsOrganization|wimcor:real:odense-team-season
+shimizu-team	Q1203168	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|8|17|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|20|26|requires|HasSort SportsOrganization|wimcor:real:shimizu-team-season
+bandung-team	Q10389	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|8|17|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|20|26|requires|HasSort SportsOrganization|wimcor:real:bandung-team-season
+wellesley-university	Q533317	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|16|22|requires|HasSort University|wimcor:real:wellesley-college-campus
+freiburg-university	Q2833	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|15|21|requires|HasSort University|wimcor:real:freiburg-university-campus
+boston-university	Q100	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:boston-university-campus
+york-university	Q42462	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|11|17|requires|HasSort University|wimcor:real:york-university-campus
+brighton-university	Q1022488	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|15|21|requires|HasSort University|wimcor:real:brighton-university-campus
+dortmund-team	Q1295	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|9|18|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|21|27|requires|HasSort SportsOrganization|wimcor:real:dortmund-team-season
+toulouse-team	Q7880	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|9|18|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|21|27|requires|HasSort SportsOrganization|wimcor:real:toulouse-team-season
+porto-team	Q36433	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|6|15|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|18|24|requires|HasSort SportsOrganization|wimcor:real:porto-team-season
+milan-team	Q490	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|6|15|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|18|24|requires|HasSort SportsOrganization|wimcor:real:milan-team-season
+toronto-team	Q172	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|8|17|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|20|26|requires|HasSort SportsOrganization|wimcor:real:toronto-team-season
+krasnodar-team	Q3646	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|10|19|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|22|28|requires|HasSort SportsOrganization|wimcor:real:krasnodar-team-season
+groningen-team	Q749	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|10|19|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|22|28|requires|HasSort SportsOrganization|wimcor:real:groningen-team-season
+leeds-artifact	Q2460124	have	SubjectHole	1	InstitutionOf	Noun|garden|garden|12|18|requires|HasSort Artifact|wimcor:real:leeds-castle-garden
+ascot-artifact	Q2197644	have	SubjectHole	1	InstitutionOf	Noun|garden|garden|12|18|requires|HasSort Artifact|wimcor:real:ascot-racecourse-garden
+hackney-artifact	Q205679	have	SubjectHole	1	InstitutionOf	Noun|garden|garden|14|20|requires|HasSort Artifact|wimcor:real:hackney-empire-garden
+campbelltown-artifact	Q1030585	have	SubjectHole	1	InstitutionOf	Noun|garden|garden|19|25|requires|HasSort Artifact|wimcor:real:campbelltown-stadium-garden
+viborg-team	Q21176	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|7|16|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|19|25|requires|HasSort SportsOrganization|wimcor:real:viborg-team-season
+lugo-team	Q11125	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|5|14|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|17|23|requires|HasSort SportsOrganization|wimcor:real:lugo-team-season
+thun-team	Q68978	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|5|14|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|17|23|requires|HasSort SportsOrganization|wimcor:real:thun-team-season
+morelia-team	Q200252	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|8|17|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|20|26|requires|HasSort SportsOrganization|wimcor:real:morelia-team-season
+sabadell-team	Q12258	announce	SubjectHole	1	InstitutionOf	Verb|announce|announces|9|18|requires|AnyOf [HasSort Animate,HasSort Organization]|VerbNet:say-37.7;;Noun|season|season|21|27|requires|HasSort SportsOrganization|wimcor:real:sabadell-team-season
+dundee-university	Q2357511	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:dundee-university-campus
+utrecht-university	Q803	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|14|20|requires|HasSort University|wimcor:real:utrecht-university-campus
+glasgow-university	Q55934339	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|14|20|requires|HasSort University|wimcor:real:glasgow-university-campus
+delft-university	Q690	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|12|18|requires|HasSort University|wimcor:real:delft-university-campus
+liverpool-university	Q21665571	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|16|22|requires|HasSort University|wimcor:real:liverpool-university-campus
+heidelberg-university	Q2966	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|17|23|requires|HasSort University|wimcor:real:heidelberg-university-campus
+salamanca-university	Q15695	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|16|22|requires|HasSort University|wimcor:real:salamanca-university-campus
+auburn-university	Q79728	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:auburn-university-campus
+denver-university	Q16554	have	SubjectHole	1	InstitutionOf	Noun|campus|campus|13|19|requires|HasSort University|wimcor:real:denver-university-campus
+houston-attend	Q16555	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:houston-attend
+exeter-attend	Q21886091	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:exeter-attend
+rochester-attend	Q49218	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:rochester-attend
+pisa-attend	Q13375	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:pisa-attend
+guadalajara-attend	Q9022	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:guadalajara-attend
+wellesley-attend	Q533317	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:wellesley-attend
+york-attend	Q42462	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:york-attend
+dundee-attend	Q2357511	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:dundee-attend
+glasgow-attend	Q55934339	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:glasgow-attend
+denver-attend	Q16554	attend	ObjectHole	1	InstitutionOf	Verb|attend|attends|3|10|requires|HasSort University|wimcor:real:denver-attend
+aberystwyth-offer	Q213154	offer	SubjectHole	1	InstitutionOf	Verb|offer|offers|12|18|requires|HasSort University|wimcor:real:aberystwyth-offers-degree
+york-publish	Q42462	publish	SubjectHole	1	InstitutionOf	Verb|publish|publishes|5|14|requires|HasSort University|wimcor:real:york-publishes-study

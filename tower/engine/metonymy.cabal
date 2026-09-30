@@ -1,0 +1,73 @@
+cabal-version:      3.0
+name:               metonymy
+version:            0.1.0.0
+synopsis:           Proof-carrying metonymy expansion and contraction
+license:            BSD-3-Clause
+license-file:       ../../LICENSE
+build-type:         Simple
+
+common warnings
+  ghc-options: -Wall -Wcompat -Widentities
+
+library
+  import: warnings
+  exposed-modules:
+      Metonymy.Types
+      Metonymy.Verified
+      Metonymy.Ontology
+      Metonymy.Resolution
+      Metonymy.Contextual
+      Metonymy.ContextualChecked
+      Metonymy.ContextSpec
+      Metonymy.Snapshot
+      Metonymy.Waterloo
+      Metonymy.MoldeFK
+      Metonymy.Cathedrals
+      Metonymy.Eswatini
+      Metonymy.Rijeka
+      Metonymy.Busan
+      Metonymy.AuthorWork
+      Metonymy.PartWhole
+      Metonymy.CauseEffect
+      Metonymy.MaterialObject
+      Metonymy.ContainerContent
+      Metonymy.SyntheticTowers
+      Metonymy.Elaborator
+      Metonymy.GF
+      Metonymy.Report
+      Metonymy.ExampleDatabase
+  hs-source-dirs: src
+  build-depends:
+      base >=4.17 && <5,
+      containers >=0.6,
+      process >=1.6,
+      text >=2.0
+  default-language: GHC2021
+
+executable metonymy
+  import: warnings
+  main-is: Main.hs
+  hs-source-dirs: app
+  build-depends:
+      base >=4.17 && <5,
+      metonymy
+  default-language: GHC2021
+
+executable metonymy-report
+  import: warnings
+  main-is: Report.hs
+  hs-source-dirs: app
+  build-depends:
+      base >=4.17 && <5,
+      metonymy
+  default-language: GHC2021
+
+test-suite metonymy-tests
+  import: warnings
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs: test
+  build-depends:
+      base >=4.17 && <5,
+      metonymy
+  default-language: GHC2021

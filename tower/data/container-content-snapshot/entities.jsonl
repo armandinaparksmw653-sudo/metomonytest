@@ -1,0 +1,73 @@
+{"id":"LOCAL_BARREL","labels":["the barrel"]}
+{"id":"LOCAL_BEER","labels":["beer"]}
+{"id":"LOCAL_BOTTLE","labels":["the bottle"]}
+{"id":"LOCAL_BUCKET","labels":["the bucket"]}
+{"id":"LOCAL_CANISTER","labels":["the canister"]}
+{"id":"LOCAL_CARTON","labels":["the carton"]}
+{"id":"LOCAL_CASK","labels":["the cask"]}
+{"id":"LOCAL_CASSEROLE","labels":["the casserole"]}
+{"id":"LOCAL_ALE","labels":["ale"]}
+{"id":"LOCAL_CONTAINER","labels":["the container"]}
+{"id":"LOCAL_CUP","labels":["the cup"]}
+{"id":"LOCAL_DRUG","labels":["drug"]}
+{"id":"LOCAL_EXTINGUISHER","labels":["the extinguisher"]}
+{"id":"LOCAL_FLASK","labels":["the flask"]}
+{"id":"LOCAL_FOAM","labels":["foam"]}
+{"id":"LOCAL_GLASS","labels":["the glass"]}
+{"id":"LOCAL_HOSE","labels":["the hose"]}
+{"id":"LOCAL_JAR","labels":["the jar"]}
+{"id":"LOCAL_KETTLE","labels":["the kettle"]}
+{"id":"LOCAL_LENTILS","labels":["lentils"]}
+{"id":"LOCAL_LIQUID","labels":["liquid"]}
+{"id":"LOCAL_LIQUOR","labels":["liquor"]}
+{"id":"LOCAL_COFFEE","labels":["coffee"]}
+{"id":"LOCAL_MILK","labels":["milk"]}
+{"id":"LOCAL_MUG","labels":["the mug"]}
+{"id":"LOCAL_ORCHESTRA","labels":["the orchestra"]}
+{"id":"LOCAL_PIANIST","labels":["the pianist"]}
+{"id":"LOCAL_PERFORMANCE","labels":["a performance"]}
+{"id":"LOCAL_BAND","labels":["the band"]}
+{"id":"LOCAL_MUSIC","labels":["music"]}
+{"id":"LOCAL_POET","labels":["the poet"]}
+{"id":"LOCAL_POEMS","labels":["poems"]}
+{"id":"LOCAL_PLAYWRIGHT","labels":["the playwright"]}
+{"id":"LOCAL_PLAY","labels":["a play"]}
+{"id":"LOCAL_OXYGEN","labels":["oxygen"]}
+{"id":"LOCAL_PACK","labels":["a pack"]}
+{"id":"LOCAL_PITCHER","labels":["the pitcher"]}
+{"id":"LOCAL_PLATTER","labels":["the platter"]}
+{"id":"LOCAL_FOOD","labels":["food"]}
+{"id":"LOCAL_BOWL","labels":["the bowl"]}
+{"id":"LOCAL_SOUP","labels":["soup"]}
+{"id":"LOCAL_POOL","labels":["the pool"]}
+{"id":"LOCAL_POT","labels":["the pot"]}
+{"id":"LOCAL_STEW","labels":["stew"]}
+{"id":"LOCAL_WORKERS","labels":["workers"]}
+{"id":"LOCAL_RESERVOIR","labels":["the reservoir"]}
+{"id":"LOCAL_RUM","labels":["rum"]}
+{"id":"LOCAL_SHOT","labels":["shot"]}
+{"id":"LOCAL_SYRINGE","labels":["the syringe"]}
+{"id":"LOCAL_SYMPHONY","labels":["the symphony"]}
+{"id":"LOCAL_TANK","labels":["the tank"]}
+{"id":"LOCAL_WATER","labels":["water"]}
+{"id":"LOCAL_WINE","labels":["wine"]}
+{"id":"LOCAL_ARTILLERY","labels":["artillery"]}
+{"id":"LOCAL_EGYPTIAN_MILITARY","labels":["the Egyptian military"]}
+{"id":"LOCAL_TRUMPET","labels":["a trumpet"]}
+{"id":"LOCAL_TRUMPET_SOUND","labels":["the sound of the trumpet"]}
+{"id":"LOCAL_BRASS","labels":["the brass"]}
+{"id":"LOCAL_BRASS_SECTION","labels":["the brass section"]}
+{"id":"LOCAL_SIREN","labels":["a siren"]}
+{"id":"LOCAL_SIREN_SOUND","labels":["the sound of the siren"]}
+{"id":"LOCAL_ORGAN","labels":["the organ"]}
+{"id":"LOCAL_ORGAN_SOUND","labels":["the sound of the organ"]}
+{"id":"LOCAL_HORN","labels":["a horn"]}
+{"id":"LOCAL_HORN_SOUND","labels":["the sound of the horn"]}
+{"id":"LOCAL_NORTH_KOREAN_ARTILLERY","labels":["North Korean artillery"]}
+{"id":"LOCAL_NORTH_KOREAN_MILITARY","labels":["the North Korean military"]}
+{"id":"LOCAL_CONFEDERATE_ARTILLERY","labels":["Confederate artillery"]}
+{"id":"LOCAL_CONFEDERATE_ARMY","labels":["the Confederate States Army"]}
+{"id":"LOCAL_JOURNALIST","labels":["the journalist"]}
+{"id":"LOCAL_ARTICLES","labels":["her columns"]}
+{"id":"LOCAL_PHILOSOPHER","labels":["the philosopher"]}
+{"id":"LOCAL_THEORY","labels":["his theory"]}

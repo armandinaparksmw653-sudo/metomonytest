@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame xmlns="http://framenet.icsi.berkeley.edu" ID="100" name="Statement">
+  <definition>A Speaker communicates a Message about a Topic.</definition>
+  <FE ID="101" name="Speaker" abbrev="Spkr" coreType="Core">
+    <definition>The entity producing the statement.</definition>
+  </FE>
+  <FE ID="102" name="Message" abbrev="Msg" coreType="Core">
+    <definition>The communicated content.</definition>
+  </FE>
+  <FE ID="103" name="Topic" abbrev="Top" coreType="Peripheral">
+    <definition>The subject matter.</definition>
+  </FE>
+  <frameRelation type="Inherits from" superFrameName="Communication"
+                 subFrameName="Statement"/>
+</frame>

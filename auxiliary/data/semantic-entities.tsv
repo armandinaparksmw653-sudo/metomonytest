@@ -1,0 +1,11 @@
+entity_id	label	gf_function	sorts	provenance
+mozart	Mozart	Mozart	Human	local:semantic-fixture
+music-of-mozart	Mozart's music	MusicOfMozart	MusicalWork,GenericReading	local:semantic-fixture
+eine-kleine-nachtmusik	Eine kleine Nachtmusik	EineKleineNachtmusik	MusicalWork	local:semantic-fixture
+spielberg	Spielberg	Spielberg	Human	local:semantic-fixture
+films-of-spielberg	Spielberg's films	FilmsOfSpielberg	Film,GenericReading	local:semantic-fixture
+jaws	Jaws	Jaws	Film	local:semantic-fixture
+plate	a plate	Plate	Container	local:semantic-fixture
+food-on-plate	the food on the plate	FoodOnPlate	Food,GenericReading	local:semantic-fixture
+chanel	Chanel	Chanel	Brand	local:semantic-fixture
+clothing-by-chanel	Chanel clothing	ClothingByChanel	Clothing,GenericReading	local:semantic-fixture

@@ -1,0 +1,71 @@
+name: tower-report
+
+# Manual only: builds the formal checker and the Haskell engine, then
+# runs metonymy-report -- the tool that drives the entire curated
+# 124-example database (16 flagship + 108 scale-tier, both the 52
+# Haskell-module-driven ones and the 72 TSV-driven scale-tier
+# scenarios) through the real, Agda-checked contextual-fiber tower and
+# prints the per-layer resolution for every one. Exits non-zero if any
+# single example fails, so a red run here means something in the
+# example database genuinely stopped passing formal verification.
+#
+# This is the same `make report` step ci.yml already runs as the last
+# part of its full publication-artifact verification (build + Haskell
+# tests + generated-file checks + Agda formal-artifact check) --
+# broken out into its own workflow so "run the whole example database
+# through the formal apparatus" is a single, separately named, always
+# green-or-red entry in the Actions tab, not a step buried inside a
+# longer job. It duplicates ci.yml's toolchain setup and build steps
+# (~10 extra minutes per run) rather than depending on ci.yml's
+# artifacts, since GitHub Actions has no built-in way to reuse another
+# workflow's build output across separate workflow files.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      AGDA_RTS: +RTS -M6G -RTS
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache Cubical and GF RGL
+        uses: actions/cache@v5
+        with:
+          path: |
+            ~/.cache/metonymy/cubical-v0.5
+            ~/.cache/metonymy/gf-rgl-20260403
+            ~/.cache/metonymy/gf-rgl-lib
+          key: metonymy-${{ runner.os }}-132a2a3-e825d92-gf312
+
+      - name: Install pinned system toolchain
+        run: |
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            --no-install-recommends agda-bin cabal-install curl ghc git make ripgrep
+          curl -L \
+            "https://github.com/GrammaticalFramework/gf-core/releases/download/release-3.12/gf-3.12-ubuntu-24.04.deb" \
+            -o /tmp/gf.deb
+          echo "17aa5452b713f1e00a0755a1bad998a926acbffb96eefde2c3800ca72536b4d8  /tmp/gf.deb" \
+            | sha256sum -c -
+          sudo apt-get install -y /tmp/gf.deb
+
+      - name: Fetch pinned Cubical and GF RGL, run the Haskell test suite
+        run: ./scripts/bootstrap.sh
+
+      - name: Run the full example database through the formal apparatus
+        run: make report
+
+      - name: Upload the full 124-example tower report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tower-report
+          path: build/evaluation/tower-report.txt
+          retention-days: 30

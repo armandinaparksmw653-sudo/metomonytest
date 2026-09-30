@@ -1,0 +1,62 @@
+{
+  "base_image": "ubuntu:24.04",
+  "system_packages": {
+    "agda-bin": "2.6.3-1build1",
+    "cabal-install": "3.8.1.0-1",
+    "curl": "8.5.0-2ubuntu10.13",
+    "ghc": ">=9.4.7 (CI runner currently resolves 9.14.1)",
+    "git": "1:2.43.0-1ubuntu7.3",
+    "make": "4.3-4.1build2"
+  },
+  "gf": {
+    "version": "3.12.0",
+    "url": "https://github.com/GrammaticalFramework/gf-core/releases/download/release-3.12/gf-3.12-ubuntu-24.04.deb",
+    "sha256": "17aa5452b713f1e00a0755a1bad998a926acbffb96eefde2c3800ca72536b4d8"
+  },
+  "cubical": {
+    "repository": "https://github.com/agda/cubical.git",
+    "tag": "v0.5",
+    "commit": "132a2a3197b490c571356f0399a2a6fbfab40f2a"
+  },
+  "gf_rgl": {
+    "repository": "https://github.com/GrammaticalFramework/gf-rgl.git",
+    "tag": "20260403",
+    "commit": "e825d9223305ad3066e1ac5b276bcdedd2fcd15a"
+  },
+  "verbnet": {
+    "repository": "https://github.com/cu-clear/verbnet.git",
+    "directory": "verbnet3.4",
+    "commit": "ae8e9cfdc2c0d3414b748763612f1a0a34194cc1",
+    "actions": 6739,
+    "action_roles": 55024,
+    "compiled_action_roles": 17006,
+    "actions_sha256": "9db0fac7261940f8b467287dcdb59afd93e8da9d6b1e722262d3b0436ca21148",
+    "action_roles_sha256": "6ac490c739922836dff76228ab002721fcfcf895b9681a3a0baf956fc8743ff8"
+  },
+  "semeval_location_test": {
+    "instances": 908,
+    "sha256": "1dc771c9fbee5a6c2cd0cab38b26d3b2a65a637828b602110387656280c8871e",
+    "redistributed": false
+  },
+  "wimcor_v1_1": {
+    "instances": 206000,
+    "test_instances": 41200,
+    "sha256": "df4d52a63d9c03cdce543f5d9638efafab73736ce117f90352373fd7051f8e2b",
+    "redistributed": false
+  },
+  "conmec": {
+    "repository_commit": "ec6914770b86eb82347724e22c7b627598644ba4",
+    "instances": 6000,
+    "sha256": "cd692d6953bb719bb6aeb0ac13df7c3641564918c38cf39ad15bcf20c8b76d90",
+    "redistributed": false
+  },
+  "stanza": {
+    "package_version": "1.14.0",
+    "sdist_sha256": "edd1eb171d34bea920c4d06d3f007a2232a63991f20f398370204ca3ddc8287f",
+    "wheel_sha256": "b5e81d742e39671de146e69f3c6ca7ff76cc4201ed07cab3083d815b2cbab544",
+    "ud_package": "ewt",
+    "resources_manifest": "resources_1.14.0.json",
+    "note": "Per-processor model file integrity (MD5) is checked by Stanza's own downloader against its resources manifest at this pinned package version; not independently re-pinned here. Used only by the research/evaluation-only dependency-hint frontend (scripts/annotate_dependency_hints.py), not by the certified Agda/GF pipeline.",
+    "redistributed": false
+  }
+}
